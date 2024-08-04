@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TalentMatch Pro: Revolutionize Your Hiring Process</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Roboto', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+      overflow: hidden;
+    }
+    .hero {
+      background: linear-gradient(135deg, #005cb3, #003d7a);
+      color: #fff;
+      padding: 120px 20px;
+      text-align: center;
+    } 
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    .hero p {
+      font-size: 1.3em;
+      margin-bottom: 30px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .cta-button {
+      padding: 12px 24px;
+      background: #fff;
+      color: #007BFF;
+      text-decoration: none;
+      border-radius: 25px;
+      font-size: 1.1em;
+      display: inline-block;
+      transition: all 0.3s ease;
+      font-weight: 700;
+    }
+    .cta-button:hover {
+      background: #f0f0f0;
+      transform: translateY(-2px);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .section {
+      padding: 80px 20px;
+    }
+    .problem-statement, .features, .benefits, .cta, .faqs {
+      padding: 60px 20px;
+    }
+    .problem-statement {
+      background: #f9f9f9;
+    }
+    .features {
+      background: #f1f1f1;
+    }
+    .benefits {
+      background: #e9ecef;
+    }
+    .cta {
+      background: linear-gradient(135deg, #005cb3, #003d7a);
+      color: #fff;
+      text-align: center;
+    }
+    .faqs {
+      background: #f8f9fa;
+    }
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 50px; /* Increased from 30px to 50px */
+      text-align: center;
+      color: #0056b3;
+    }
+    .problem-statement .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    .problem-statement p {
+      font-size: 1.2em;
+      margin-bottom: 20px;
+      text-align: left;
+      padding-left: 30px;
+    }
+    .problem-statement ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .problem-statement ul li {
+      margin-bottom: 15px;
+      padding-left: 60px;
+      position: relative;
+      line-height: 1.5;
+    }
+    .problem-statement ul li::before {
+      content: '✓';
+      color: #007BFF;
+      position: absolute;
+      left: 30px;
+      font-size: 1.2em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .feature {
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .feature:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .feature-image {
+      flex: 0 0 200px;
+      margin-right: 30px;
+    }
+    .feature-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .feature-content {
+      flex: 1;
+    }
+    .feature h3, .benefit h3, .faq h3 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #007BFF;
+    }
+    .feature:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .feature:nth-child(even) .feature-image {
+      margin-right: 0;
+      margin-left: 30px;
+    }
+    .benefit {
+      margin-bottom: 30px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    .benefit:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+    .faq {
+      margin-bottom: 30px;
+    }
+    .cta h2 {
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+    .footer {
+      background: #333;
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+    }
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .social-links img {
+      width: 40px;
+      height: 40px;
+      margin: 0 10px;
+      transition: transform 0.3s ease;
+    }
+    .social-links img:hover {
+      transform: scale(1.1);
+    }
+    @media (max-width: 768px) {
+      .feature, .feature:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+      }
+      .feature-image, .feature:nth-child(even) .feature-image {
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 20px;
+      }
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 30px;
+    }
+
+    .tab-button {
+      background-color: #f1f1f1;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 20px;
+      transition: 0.3s;
+      font-size: 17px;
+      border-radius: 25px;
+      margin: 0 10px;
+      color: #333;
+      font-weight: 500;
+    }
+
+    .tab-button:hover {
+      background-color: #ddd;
+      transform: translateY(-2px);
+    }
+
+    .tab-button.active {
+      background-color: #007BFF;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,123,255,0.3);
+    }
+    
+    .tab-content {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .tab-content:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    }
+
+    .tab-pane {
+      display: none;
+    }
+
+    .tab-pane.active {
+      display: block;
+    }
+
+    .tab-pane ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .tab-pane ul li {
+      margin-bottom: 15px;
+      padding-left: 30px;
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .tab-pane ul li::before {
+      content: '✓';
+      color: #007BFF;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2em;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <h1>Magic HR: Bring your job posts to life</h1>
+      <p>Create high-quality, interactive job descriptions that make hiring managers smile, candidates shine, and recruiters thrive.</p>
+      <a href="#" class="cta-button">Join Our Beta Program</a>
+    </div>
+  </section>
+
+  <section class="problem-statement section">
+    <div class="container">
+      <h2>Addressing Top-of-Funnel Recruitment Challenges</h2>
+      <p>Talent acquisition is harder today than it has ever been:</p>
+      <ul>
+        <li>Crafting compelling job descriptions is a pain for hiring managers</li>
+        <li>Candidates are spraying and praying for jobs with near-zero success rates</li>
+        <li>Recruiters are inundated with thousands of applicant profiles per opening</li>
+        <li>Resume parsing software is not reliable enough especially in the age of GenAI</li>
+        <li>Assessment tools are degrading the candidate's experience further</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="features section">
+    <div class="container">
+      <h2>Unlocking a win-win solution</h2>
+      <div class="feature">
+        <div class="feature-image">
+          <img src="path-to-job-description-creator.gif" alt="AI-Powered Job Description Creator">
+        </div>
+        <div class="feature-content">
+          <h3>Create high-quality Job Descriptions effortlessly using Conversational AI</h3>
+          <ul>
+            <li>Hiring managers can generate highly personalized job posts in minutes</li>
+            <li>Seamlessly convey ideal candidate persona to recruiters and boost initial candidate impression</li>
+            <li>Easily integrates into all candidate sourcing channels</li>
+          </ul>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-image">
+          <img src="path-to-candidate-analytics.gif" alt="Candidate Interest Analytics">
+        </div>
+        <div class="feature-content">
+          <h3>Shortlist highly qualified, high-intent candidates auto-magically</h3>
+          <ul>
+            <li>Interactive job posts have embedded chatbots that can screen interested candidates</li>
+            <li>Capture candidate intent data to augment decision-making because hiring is not a one-size-fits-all process</li>
+            <li>Access real-time candidate summaries and scores through a comprehensive recruiter dashboard</li>
+          </ul>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-image">
+          <img src="path-to-chatbot.gif" alt="Intelligent Recruitment Chatbot">
+        </div>
+        <div class="feature-content">
+          <h3>Help best-fit candidates boost interview chances</h3>
+          <ul>
+            <li>Job posts are intentionally designed to give an opportunity to let candidates set themselves apart by engaging with an embedded screening agent</li>
+            <li>Unparalleled candidate experience by enabling candidates to learn about the job and ask any questions that are top of mind</li>
+          </ul>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="feature-image">
+          <img src="path-to-dashboard.gif" alt="Comprehensive Recruiter Dashboard">
+        </div>
+        <div class="feature-content">
+          <h3>Persuade passive candidates like never before</h3>
+          <ul>
+            <li>Job descriptions no longer have to be just static documents. They are a powerful tool in the toolkit that can finally be used to attract qualified candidates</li>
+            <li>Candidates can experience a day-in-the-life of the role, learn more about the team, and much more in a seamless conversational UI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="benefits section">
+  <div class="container">
+    <h2>Transformative Benefits</h2>
+    <div class="tabs">
+      <button class="tab-button active" data-tab="recruiters">Recruiters</button>
+      <button class="tab-button" data-tab="hiring-managers">Hiring Managers</button>
+      <button class="tab-button" data-tab="candidates">Candidates</button>
+      <button class="tab-button" data-tab="chro">CHRO</button>
+    </div>
+    <div class="tab-content">
+      <div class="tab-pane active" id="recruiters">
+        <ul>
+          <li>Reducing the time recruiter spends evaluating hundreds of resumes for any job opening</li>
+          <li>Reducing the time recruiter spends on calling candidates that are not genuinely interested</li>
+          <li>Reducing the time recruiter spends upfront trying to collect information from candidates</li>
+          <li>Making initial screening process more data driven as opposed to intuition based</li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="hiring-managers">
+        <ul>
+          <li>Reducing the time taken to create the Job description for the hiring manager</li>
+          <li>Clearly communicate your Ideal Candidate Persona to recruiters in minutes</li>
+          <li>Either create net-new job post or refine existing job descriptions</li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="candidates">
+        <ul>
+          <li>Don't waste time on filling out information that no one reads (e.g. cover letters)</li>
+          <li>Help candidates get all the information they are looking for (company, role, team etc.) simply</li>
+          <li>Make your application stand out</li>
+        </ul>
+      </div>
+      <div class="tab-pane" id="chro">
+        <ul>
+          <li>Reduce time-to-hire dramatically whilst focusing on the best-fit candidates</li>
+          <li>Reap the benefits of Applicant Tracking Systems, Resume Parsing Software, and Assessment tools all packaged in one solution at a fraction of the cost</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <section class="cta section">
+    <div class="container">
+      <h2>Transform Your Hiring Today</h2>
+      <a href="#" class="cta-button">Get Exclusive Beta Access</a>
+    </div>
+  </section>
+
+  <section class="faqs section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq">
+        <h3>How does Magic HR create personalized job descriptions?</h3>
+        <p>Our AI analyzes your company culture, job requirements, and industry trends to craft engaging, tailored job posts that resonate with your ideal candidates.</p>
+      </div>
+      <div class="faq">
+        <h3>What kind of candidate insights can I expect?</h3>
+        <p>You'll receive detailed metrics on candidate engagement, specific areas of interest, interaction patterns, and overall intent scores to help you identify the most promising applicants.</p>
+      </div>
+      <div class="faq">
+        <h3>How does the chatbot enhance the recruitment process?</h3>
+        <p>Our AI-powered chatbot provides instant, accurate responses to candidate inquiries 24/7, improving the application experience while gathering valuable data on candidate preferences and concerns.</p>
+      </div>
+      <div class="faq">
+        <h3>What features are included in the recruiter dashboard?</h3>
+        <p>The dashboard offers a comprehensive view of each candidate, including interaction summaries, intent scores, skill match assessments, and engagement metrics, all designed to streamline your decision-making process.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Contact Us: <a href="mailto:info@talentmatchpro.com">info@talentmatchpro.com</a> | +1 (800) 123-4567</p>
+      <div class="social-links">
+        <a href="#"><img src="path-to-linkedin-icon.png" alt="LinkedIn"></a>
+        <a href="#"><img src="path-to-twitter-icon.png" alt="Twitter"></a>
+        <a href="#"><img src="path-to-facebook-icon.png" alt="Facebook"></a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const tabs = document.querySelectorAll('.tab-button');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          const target = tab.dataset.tab;
+          
+          // Remove active class from all tabs and panes
+          tabs.forEach(t => t.classList.remove('active'));
+          document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('active'));
+          
+          // Add active class to clicked tab and corresponding pane
+          tab.classList.add('active');
+          document.getElementById(target).classList.add('active');
+        });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -274,6 +274,91 @@
       transform: translateY(-50%);
       font-size: 1.2em;
     }
+    .video-section {
+      background-color: #f8f9fa;
+      padding: 80px 0;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      height: 0;
+      overflow: hidden;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.4);
+    }
+
+    .popup-content {
+      background-color: #fefefe;
+      margin: 15% auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+      max-width: 500px;
+      border-radius: 10px;
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    #beta-form input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    #beta-form button {
+      width: 100%;
+      background-color: #007BFF;
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #beta-form button:hover {
+      background-color: #0056b3;
+    }
   </style>
 </head>
 <body>
@@ -282,6 +367,15 @@
       <h1>Magic HR: Bring your job posts to life</h1>
       <p>Create high-quality, interactive job descriptions that make hiring managers smile, candidates shine, and recruiters thrive.</p>
       <a href="#" class="cta-button">Join Our Beta Program</a>
+    </div>
+  </section>
+
+  <section class="video-section section">
+    <div class="container">
+      <h2>See Magic HR in Action</h2>
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/YOUR_VIDEO_ID" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
     </div>
   </section>
 
@@ -451,6 +545,58 @@
           tab.classList.add('active');
           document.getElementById(target).classList.add('active');
         });
+      });
+    });
+
+
+  </script>
+
+  <div id="popup-form" class="popup">
+    <div class="popup-content">
+      <span class="close">&times;</span>
+      <h2>Join Our Beta Program</h2>
+      <form id="beta-form">
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const popup = document.getElementById('popup-form');
+      const betaButtons = document.querySelectorAll('.cta-button');
+      const closeButton = document.querySelector('.close');
+
+      betaButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+          e.preventDefault();
+          popup.style.display = 'block';
+        });
+      });
+
+      closeButton.addEventListener('click', function() {
+        popup.style.display = 'none';
+      });
+
+      window.addEventListener('click', function(event) {
+        if (event.target == popup) {
+          popup.style.display = 'none';
+        }
+      });
+
+      document.getElementById('beta-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Here you would typically send the form data to your server
+        // For this example, we'll just log it to the console
+        console.log('Form submitted:', {
+          firstName: document.getElementById('firstName').value,
+          lastName: document.getElementById('lastName').value,
+          email: document.getElementById('email').value
+        });
+        alert('Thank you for your interest! We will be in touch soon.');
+        popup.style.display = 'none';
       });
     });
   </script>

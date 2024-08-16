@@ -139,6 +139,36 @@
     .feature-content {
       flex: 1;
     }
+
+    .feature-content h3 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: #007BFF;
+      padding-left: 30px; /* Add left padding to align with list items */
+    }
+
+    .feature-content ul {
+      list-style-type: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .feature-content ul li {
+      margin-bottom: 15px;
+      padding-left: 60px; /* Increase left padding */
+      position: relative;
+      line-height: 1.5;
+    }
+
+    .feature-content ul li::before {
+      content: '✓';
+      color: #007BFF;
+      position: absolute;
+      left: 30px;
+      font-size: 1.2em;
+      top: 50%;
+      transform: translateY(-50%);
+    }
     .feature h3, .benefit h3, .faq h3 {
       font-size: 1.8em;
       margin-bottom: 15px;
